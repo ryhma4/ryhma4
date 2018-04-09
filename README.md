@@ -1,3 +1,3 @@
 # ryhma4
-Minulla on tullut "muutamia kymmeniä" harmaita kymmeniä harmaita hiuksia lisää
-olo kuin lukisi hepreaa..
+A-K:lla on tullut "muutamia kymmeniä" harmaita kymmeniä harmaita hiuksia lisää ja 
+sillä on olo kuin lukisi hepreaa..
