@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <!-- ääkköset -->
+    <meta charset="utf-8">
+    <!-- explorer tuki -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- skaalaus -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- otsikko vain -->
+    <title></title>
+</head>
+
+<body>
+    <div id="lomake"></div>
+    <!-- jquery pääkirjastoon linkki -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script>
+        $.getJSON("kysymykset.json", function (data) {
+            var items = [];
+            $.each(data, function (key, d) {
+                //luetaan JSON-tiedosto ja muodostetaan html-lomake-elementit items-taulukkoon
+                if (d.tyyppi == "text") {
+                    items.push(d.kysymys + "<br>");
+                    //tehdään lomake elementti
+                    items.push("<input type=" + d.tyyppi + " id=" + d.id + "><br>");
+                }
+                if (d.tyyppi == "textarea") {
+                    items.push(d.kysymys + "<br>");
+                    //tehdään lomake elementti
+                    items.push("<textarea id=" + d.id + "></textarea><br>");
+                }
+            });
+            //item-taulukon sisältö sivustoille näkyviin
+            $("<div/>", {
+                html: items.join("")
+            }).appendTo("#lomake");
+        });
+
+    </script>
+</body>
+
+</html>
